@@ -205,7 +205,7 @@
       <workItem from="1615562442172" duration="1399000" />
       <workItem from="1615565705246" duration="10496000" />
       <workItem from="1615758680060" duration="8577000" />
-      <workItem from="1615821119909" duration="10901000" />
+      <workItem from="1615821119909" duration="11258000" />
     </task>
     <servers />
   </component>
@@ -249,13 +249,17 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="1317" height="172" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1615836097923" />
+    <state x="493" y="71" key="NewPhpClassDialog" timestamp="1615840928018">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="493" y="71" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1615840928018" />
     <state x="181" y="9" key="SettingsEditor" timestamp="1615578944048">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="181" y="9" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1615578944048" />
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615839879126">
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615840793514">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1615839879126" />
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1615840793514" />
   </component>
 </project>
