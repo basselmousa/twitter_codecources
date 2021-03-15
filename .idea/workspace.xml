@@ -28,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -146,6 +146,25 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-websockets" />
+      <path value="$PROJECT_DIR$/vendor/ringcentral/psr7" />
+      <path value="$PROJECT_DIR$/vendor/pusher/pusher-php-server" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/react/http" />
+      <path value="$PROJECT_DIR$/vendor/react/promise-timer" />
+      <path value="$PROJECT_DIR$/vendor/react/promise-stream" />
+      <path value="$PROJECT_DIR$/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/vendor/ratchet/rfc6455" />
+      <path value="$PROJECT_DIR$/vendor/cboden/ratchet" />
+      <path value="$PROJECT_DIR$/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/vendor/laravel/telescope" />
     </include_path>
   </component>
   <component name="ProjectId" id="1pZl404bhH5hvEBoZiUmhOiIEHT" />
@@ -186,6 +205,7 @@
       <workItem from="1615562442172" duration="1399000" />
       <workItem from="1615565705246" duration="10496000" />
       <workItem from="1615758680060" duration="8577000" />
+      <workItem from="1615821119909" duration="10901000" />
     </task>
     <servers />
   </component>
@@ -205,17 +225,37 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="484" y="32" key="#com.intellij.ide.util.MemberChooser" timestamp="1615836786944">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="484" y="32" key="#com.intellij.ide.util.MemberChooser/0.0.1360.728@0.0.1360.728" timestamp="1615836786944" />
     <state x="410" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615568167300">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="410" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.728@0.0.1360.728" timestamp="1615568167300" />
+    <state width="1317" height="172" key="GridCell.Tab.0.bottom" timestamp="1615836097923">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="172" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1615836097923" />
+    <state width="1317" height="172" key="GridCell.Tab.0.center" timestamp="1615836097923">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="172" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1615836097923" />
+    <state width="1317" height="172" key="GridCell.Tab.0.left" timestamp="1615836097923">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="172" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1615836097923" />
+    <state width="1317" height="172" key="GridCell.Tab.0.right" timestamp="1615836097923">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="172" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1615836097923" />
     <state x="181" y="9" key="SettingsEditor" timestamp="1615578944048">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="181" y="9" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1615578944048" />
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615765507328">
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615839879126">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1615765507328" />
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1615839879126" />
   </component>
 </project>
