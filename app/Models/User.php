@@ -50,6 +50,11 @@ class User extends Authenticatable
         return 'https://www.gravatar.com/avatar/'.md5( $this->email ).'?d=mp';
     }
 
+    public function tweets()
+    {
+        return $this->hasMany(Tweet::class);
+    }
+
     public function following()
     {
         return $this->belongsToMany(User::class, 'followers', 'user_id', 'following_id');
