@@ -13,7 +13,5 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/timeline', [App\Http\Controllers\Api\Timeline\TimelineController::class, 'index']);
+Route::post('/tweets', [\App\Http\Controllers\Api\Tweets\TweetsController::class, 'store']);
