@@ -10,14 +10,19 @@ export default {
     // return the state objects
     getters: {
         tweets(state) {
-            return state.tweets
+            return state.tweets.sort((a, b) => b.created_at - a.created_at)
         }
     },
     // mutate the state
     // commit and update the state
     mutations: {
         PUSH_TWEETS(state, data) {
-            state.tweets.push(...data)
+            state.tweets.push(
+                ...data.filter((tweet) => {
+                    /** check and filter the pagination issue */
+                    return !state.tweets.map((t) => t.id).includes(tweet.id)
+                })
+            )
         }
     },
     //
