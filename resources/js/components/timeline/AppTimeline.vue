@@ -1,5 +1,8 @@
 <template>
     <div class="">
+        <div class="border-b-8 border-gray-800 p-4 w-full">
+            <app-tweet-compose/>
+        </div>
         <app-tweets
             v-for="tweet in tweets " :key="tweet.id" :tweet="tweet"
         />
@@ -13,21 +16,22 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex'
+import {mapGetters, mapActions, mapMutations} from 'vuex'
 
 export default {
     name: "AppTimeline",
-    data(){
-        return{
-            page:1,
-            lastPage:1
+
+    data() {
+        return {
+            page: 1,
+            lastPage: 1
         }
     },
     computed: {
         ...mapGetters({
             tweets: 'timeline/tweets'
         }),
-        urlWithPage(){
+        urlWithPage() {
             return `api/timeline?page=${this.page}`;
         }
     },
@@ -35,18 +39,21 @@ export default {
         ...mapActions({
             getTweets: 'timeline/getTweets'
         }),
-        loadTweets(){
-            this.getTweets(this.urlWithPage).then((res)=>{
+        ...mapMutations({
+            PUSH_TWEETS: 'timeline/PUSH_TWEETS',
+        }),
+        loadTweets() {
+            this.getTweets(this.urlWithPage).then((res) => {
                 this.lastPage = res.data.meta.last_page
-            }).catch((err) =>{
+            }).catch((err) => {
                 console.log(err)
             });
         },
-        handleScrollToBottomOfTimeline(isVisible){
-            if(!isVisible){
+        handleScrollToBottomOfTimeline(isVisible) {
+            if (!isVisible) {
                 return;
             }
-            if(this.lastPage === this.page){
+            if (this.lastPage === this.page) {
                 return;
             }
 
@@ -56,6 +63,11 @@ export default {
     },
     mounted() {
         this.loadTweets()
+        /** listen to channels */
+        Echo.private(`timeline.${this.$user.id}`)
+            .listen('.TweetWasCreated', (e) => {
+                this.PUSH_TWEETS([e])
+        });
     },
 
 }
