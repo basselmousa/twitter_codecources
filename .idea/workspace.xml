@@ -14,7 +14,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28049ee2-fe04-4fb4-aa02-8ab8fe8ea2d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/tweets/AppTweetUsername.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/TweetResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/TweetResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Tweet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tweet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_12_185005_create_tweets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_12_185005_create_tweets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/tweets/AppTweets.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/tweets/AppTweets.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +41,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -205,7 +212,8 @@
       <workItem from="1615562442172" duration="1399000" />
       <workItem from="1615565705246" duration="10496000" />
       <workItem from="1615758680060" duration="8577000" />
-      <workItem from="1615821119909" duration="11258000" />
+      <workItem from="1615821119909" duration="11606000" />
+      <workItem from="1615911545601" duration="2795000" />
     </task>
     <servers />
   </component>
@@ -233,33 +241,33 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="410" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.728@0.0.1360.728" timestamp="1615568167300" />
-    <state width="1317" height="172" key="GridCell.Tab.0.bottom" timestamp="1615836097923">
+    <state width="1317" height="172" key="GridCell.Tab.0.bottom" timestamp="1615841283221">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="172" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1615836097923" />
-    <state width="1317" height="172" key="GridCell.Tab.0.center" timestamp="1615836097923">
+    <state width="1317" height="172" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1615841283221" />
+    <state width="1317" height="172" key="GridCell.Tab.0.center" timestamp="1615841283221">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="172" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1615836097923" />
-    <state width="1317" height="172" key="GridCell.Tab.0.left" timestamp="1615836097923">
+    <state width="1317" height="172" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1615841283221" />
+    <state width="1317" height="172" key="GridCell.Tab.0.left" timestamp="1615841283221">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="172" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1615836097923" />
-    <state width="1317" height="172" key="GridCell.Tab.0.right" timestamp="1615836097923">
+    <state width="1317" height="172" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1615841283221" />
+    <state width="1317" height="172" key="GridCell.Tab.0.right" timestamp="1615841283221">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="172" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1615836097923" />
-    <state x="493" y="71" key="NewPhpClassDialog" timestamp="1615840928018">
+    <state width="1317" height="172" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1615841283221" />
+    <state x="493" y="71" key="NewPhpClassDialog" timestamp="1615840945812">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="493" y="71" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1615840928018" />
+    <state x="493" y="71" key="NewPhpClassDialog/0.0.1360.728@0.0.1360.728" timestamp="1615840945812" />
     <state x="181" y="9" key="SettingsEditor" timestamp="1615578944048">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="181" y="9" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1615578944048" />
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615840793514">
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615914330895">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1615840793514" />
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1615914330895" />
   </component>
 </project>
