@@ -12,7 +12,13 @@
 
 <script>
 export default {
-name: "AppTweetRetweetAction"
+    name: "AppTweetRetweetAction",
+    props: {
+        tweet: {
+            required: true,
+            type: Object
+        }
+    }
 }
 </script>
 
