@@ -1,26 +1,44 @@
 import axios from "axios";
+import {without} from 'lodash'
 
-export  default {
-    namespaced:true,
-    state:{
-        likes:[],
+export default {
+    namespaced: true,
+    state: {
+        likes: [],
     },
-    getters:{
-      likes(state){
-          return state.likes
-      }
-    },
-    mutations:{
-        PUSH_LIKES(state, data){
-            state.likes.push(...data)
+    getters: {
+        likes(state) {
+            return state.likes
         }
     },
-    actions:{
-        async likeTweet(_, tweet){
-            await  axios.post(`api/tweets/${tweet.id}/likes`)
+    mutations: {
+        PUSH_LIKES(state, data) {
+            state.likes.push(...data)
         },
-        async unlikeTweet(_, tweet){
-            await  axios.delete(`api/tweets/${tweet.id}/likes`)
+        PUSH_LIKE(state, id) {
+            state.likes.push(id)
+        },
+        POP_LIKE(state, id) {
+            state.likes = without(state.likes, id)
+        },
+    },
+    actions: {
+        async likeTweet(_, tweet) {
+            await axios.post(`api/tweets/${tweet.id}/likes`)
+        },
+        async unlikeTweet(_, tweet) {
+            await axios.delete(`api/tweets/${tweet.id}/likes`)
+        },
+        syncLike({commit, state}, id) {
+            // does the like exists?
+            if (state.likes.includes(id)) {
+                // remove it
+                commit('POP_LIKE', id)
+                return;
+            }
+            // add it
+            commit('PUSH_LIKE', id)
+
         }
     }
 }
