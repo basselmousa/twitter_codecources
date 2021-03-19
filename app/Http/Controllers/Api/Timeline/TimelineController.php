@@ -22,7 +22,7 @@ class TimelineController extends Controller
                 ->tweetsFromFollowing()
                 ->latest()
                 ->with(['user', 'likes'])
-                ->paginate(8);
+                ->paginate(2);
 //        dump($request->user()->likes
 //            ->whereIn('tweet_id', Tweet::all()->pluck('id'))
 //            ->pluck('tweet_id')
