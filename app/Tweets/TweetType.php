@@ -8,5 +8,5 @@ class TweetType
 {
     const TWEET = 'tweet';
     const RETWEET = 'retweet';
-    const QOUTE = 'qoute';
+    const QUOTE = 'quote';
 }
