@@ -37,7 +37,10 @@ class TweetCollection extends ResourceCollection
             return [];
         }
         return $user->likes()
-            ->whereIn('tweet_id', $this->collection->pluck('id'))
+            ->whereIn('tweet_id',
+                $this->collection->pluck('id')
+                    ->merge($this->collection->pluck('original_tweet_id'))
+            )
             ->pluck('tweet_id')
             ->toArray();
     }
@@ -49,7 +52,10 @@ class TweetCollection extends ResourceCollection
             return [];
         }
         return $user->retweets()
-            ->whereIn('original_tweet_id', $this->collection->pluck('id'))
+            ->whereIn('original_tweet_id',
+                $this->collection->pluck('id')
+                    ->merge($this->collection->pluck('original_tweet_id'))
+            )
             ->pluck('original_tweet_id')
             ->toArray();
     }
