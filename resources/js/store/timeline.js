@@ -24,6 +24,11 @@ export default {
                 })
             )
         },
+        POP_TWEET(state , id){
+            state.tweets = state.tweets.filter((t)=>{
+                return t.id !== id
+            })
+        },
         SEL_LIKES(state, { id, count }){
             state.tweets = state.tweets.map((t)=>{
                 if(t.id === id){
@@ -36,7 +41,20 @@ export default {
 
                 return t
             })
-        }
+        },
+        SEL_RETWEETS(state, { id, count }){
+            state.tweets = state.tweets.map((t)=>{
+                if(t.id === id){
+                    t.retweets_count = count
+                }
+
+                if(get(t.original_tweet,'id') === id){
+                    t.original_tweet.retweets_count = count
+                }
+
+                return t
+            })
+        },
     },
     //
     actions: {
