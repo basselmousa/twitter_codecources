@@ -15,6 +15,12 @@ export default {
         PUSH_RETWEETS(state, data) {
             state.retweets.push(...data)
         },
+        PUSH_RETWEET(state, id) {
+            state.retweets.push(id)
+        },
+        POP_RETWEET(state, id) {
+            state.retweets = without(state.retweets, id)
+        },
     },
     actions:{
 
@@ -24,5 +30,16 @@ export default {
         async unretweetTweet(_, tweet) {
             await axios.delete(`api/tweets/${tweet.id}/retweets`)
         },
+        syncRetweet({commit, state}, id) {
+            // does the like exists?
+            if (state.retweets.includes(id)) {
+                // remove it
+                commit('POP_RETWEET', id)
+                return;
+            }
+            // add it
+            commit('PUSH_RETWEET', id)
+
+        }
     }
 }
