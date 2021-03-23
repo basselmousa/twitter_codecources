@@ -2678,6 +2678,14 @@ Echo.channel('tweets').listen('.TweetLikesWereUpdated', function (e) {
   }
 
   store.commit('timeline/SEL_LIKES', e);
+}).listen('.TweetRetweetsWereUpdated', function (e) {
+  if (e.user_id === User.id) {
+    store.dispatch('retweets/syncRetweet', e.id);
+  }
+
+  store.commit('timeline/SEL_RETWEETS', e);
+}).listen('.TweetWasDeleted', function (e) {
+  store.commit('timeline/POP_TWEET', e.id);
 });
 
 /***/ }),
@@ -2900,6 +2908,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       var _state$retweets;
 
       (_state$retweets = state.retweets).push.apply(_state$retweets, _toConsumableArray(data));
+    },
+    PUSH_RETWEET: function PUSH_RETWEET(state, id) {
+      state.retweets.push(id);
+    },
+    POP_RETWEET: function POP_RETWEET(state, id) {
+      state.retweets = (0,lodash__WEBPACK_IMPORTED_MODULE_2__.without)(state.retweets, id);
     }
   },
   actions: {
@@ -2936,6 +2950,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           }
         }, _callee2);
       }))();
+    },
+    syncRetweet: function syncRetweet(_ref, id) {
+      var commit = _ref.commit,
+          state = _ref.state;
+
+      // does the like exists?
+      if (state.retweets.includes(id)) {
+        // remove it
+        commit('POP_RETWEET', id);
+        return;
+      } // add it
+
+
+      commit('PUSH_RETWEET', id);
     }
   }
 });
@@ -3005,6 +3033,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         }).includes(tweet.id);
       })));
     },
+    POP_TWEET: function POP_TWEET(state, id) {
+      state.tweets = state.tweets.filter(function (t) {
+        return t.id !== id;
+      });
+    },
     SEL_LIKES: function SEL_LIKES(state, _ref) {
       var id = _ref.id,
           count = _ref.count;
@@ -3019,18 +3052,33 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         return t;
       });
+    },
+    SEL_RETWEETS: function SEL_RETWEETS(state, _ref2) {
+      var id = _ref2.id,
+          count = _ref2.count;
+      state.tweets = state.tweets.map(function (t) {
+        if (t.id === id) {
+          t.retweets_count = count;
+        }
+
+        if ((0,lodash__WEBPACK_IMPORTED_MODULE_2__.get)(t.original_tweet, 'id') === id) {
+          t.original_tweet.retweets_count = count;
+        }
+
+        return t;
+      });
     }
   },
   //
   actions: {
-    getTweets: function getTweets(_ref2, url) {
+    getTweets: function getTweets(_ref3, url) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
         var commit, response;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                commit = _ref2.commit;
+                commit = _ref3.commit;
                 _context.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().get(url);
 
