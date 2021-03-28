@@ -7,9 +7,16 @@
             <app-tweet-compose-textarea
                 v-model="form.body"
             />
-
+            <span class="text-gray-600">{{ media }}</span>
             <div class="flex justify-between">
-                <div class="">actions</div>
+                <ul class="flex items-center">
+                    <li class="mr-4">
+                        <app-tweet-compose-media-button
+                            id="media-compose"
+                            @selected="handleMediaSelected"
+                        />
+                    </li>
+                </ul>
                 <div class="flex items-center justify-end">
                     <div class="">
                         <app-tweet-compose-limit
@@ -31,21 +38,51 @@
 
 <script>
 import axios from 'axios'
+
 export default {
     name: "AppTweetCompose",
     data() {
         return {
             form: {
-                body: ''
-            }
+                body: '',
+                media: []
+            },
+            media: {
+                images: [],
+                video: null
+            },
+            mediaTypes: []
         }
     },
     methods: {
-        async submit(){
+        async submit() {
             //send
             await axios.post('/api/tweets', this.form)
             this.form.body = ''
+        },
+        async getMediaTypes() {
+            let response = await axios.get('/api/media/types')
+
+            this.mediaTypes = response.data.data
+
+        },
+        handleMediaSelected(files) {
+            Array.from(files).slice(0, 4).forEach((file)=>{
+                if( this.mediaTypes.image.includes(file.type) ){
+                    this.media.images.push(file)
+                }
+                if(this.mediaTypes.video.includes(file.type)){
+                    this.media.video = file
+                }
+            })
+
+            if(this.media.video){
+                this.media.images = []
+            }
         }
+    },
+    mounted() {
+        this.getMediaTypes()
     }
 }
 </script>
