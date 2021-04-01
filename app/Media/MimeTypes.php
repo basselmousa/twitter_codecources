@@ -16,4 +16,9 @@ class MimeTypes
         'video/mp4',
     ];
 
+    public static function all()
+    {
+        return array_merge(self::$image, self::$video);
+    }
+
 }
