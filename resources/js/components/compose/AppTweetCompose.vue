@@ -66,8 +66,33 @@ export default {
     methods: {
         async submit() {
             //send
+            let media = await this.uploadMedia()
+            this.form.media =  media.data.data.map(r=> r.id)
             await axios.post('/api/tweets', this.form)
             this.form.body = ''
+            this.form.media= []
+            this.media.video = null
+            this.media.images = []
+        },
+        buildMediaForm() {
+            let form = new FormData()
+            if (this.media.images) {
+                this.media.images.forEach((image, index) => {
+                    form.append(`media[${index}]`, image)
+                })
+            }
+            if (this.media.video) {
+
+                form.append('media[0]', this.media.video)
+            }
+            return form
+        },
+        async uploadMedia(){
+            return await axios.post('/api/media', this.buildMediaForm(), {
+                headers:{
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
         },
         async getMediaTypes() {
             let response = await axios.get('/api/media/types')
@@ -75,11 +100,11 @@ export default {
             this.mediaTypes = response.data.data
 
         },
-        removeVideo(){
+        removeVideo() {
             this.media.video = null
         },
-        removeImage(image){
-            this.media.images = this.media.images.filter((img) =>{
+        removeImage(image) {
+            this.media.images = this.media.images.filter((img) => {
                 return image !== img
             })
         },
@@ -96,7 +121,8 @@ export default {
             if (this.media.video) {
                 this.media.images = []
             }
-        }
+        },
+
     },
     mounted() {
         this.getMediaTypes()
