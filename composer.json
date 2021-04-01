@@ -18,7 +18,8 @@
         "laravel/telescope": "^4.4",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
-        "pusher/pusher-php-server": "^5.0"
+        "pusher/pusher-php-server": "^5.0",
+        "spatie/laravel-medialibrary": "^7.0.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
