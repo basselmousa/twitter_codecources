@@ -1,5 +1,7 @@
 <?php
 
+use App\Media\Media;
+
 return [
 
     /*
@@ -12,7 +14,7 @@ return [
      * The maximum file size of an item in bytes.
      * Adding a larger file will result in an exception.
      */
-    'max_file_size' => 1024 * 1024 * 10,
+    'max_file_size' => 1024 * 1024 * 100,
 
     /*
      * This queue will be used to generate derived and responsive images.
@@ -23,7 +25,7 @@ return [
     /*
      * The fully qualified class name of the media model.
      */
-    'media_model' => Spatie\MediaLibrary\Models\Media::class,
+    'media_model' => Media::class,
 
     's3' => [
         /*
